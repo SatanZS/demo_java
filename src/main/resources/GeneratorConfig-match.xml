@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+	<classPathEntry location="D:/Workspaces/mysql-connector-java-5.1.42.jar" />
+
+	<context id="test">
+		<!-- 生成的Java文件的编码 -->
+		<property name="javaFileEncoding" value="UTF-8" />
+		<!-- 格式化java代码 -->
+		<property name="javaFormatter"
+			value="org.mybatis.generator.api.dom.DefaultJavaFormatter" />
+		<!-- 格式化XML代码 -->
+		<property name="xmlFormatter"
+			value="org.mybatis.generator.api.dom.DefaultXmlFormatter" />
+
+		<commentGenerator
+			type="com.zsai.demo.mybatis.generator.internal.MyCommentGenerator">
+			<property name="javaFileEncoding" value="UTF-8" />
+			<property name="suppressAllComments" value="false" />
+			<property name="suppressDate" value="true" />
+		</commentGenerator>
+
+		<jdbcConnection
+			connectionURL="jdbc:mysql://127.0.0.1:3306/bigtrade-match?useSSL=true"
+			driverClass="com.mysql.jdbc.Driver" userId="root" password="">
+		</jdbcConnection>
+
+		<javaModelGenerator targetPackage="com.ifeng.bigtradematch.model"
+			targetProject="D:\mybaitsGenerator">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+
+		<javaClientGenerator targetPackage="com.ifeng.bigtradematch.mapper"
+			type="ANNOTATEDMAPPER" targetProject="D:\mybaitsGenerator">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+
+		<!-- <table schema="bigtrade-match" tableName="m_idempotent" -->
+		<!-- domainObjectName="Idempotent" enableCountByExample="false" -->
+		<!-- enableUpdateByExample="false" enableDeleteByExample="false" -->
+		<!-- enableSelectByExample="false" selectByExampleQueryId="false"> -->
+		<!-- <property name="useActualColumnNames" value="true" /> -->
+		<!-- <generatedKey column="id" sqlStatement="JDBC" /> -->
+		<!-- </table> -->
+
+		<table schema="bigtrade-match" tableName="m_order_entrust"
+			domainObjectName="OrderEntrust" enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false">
+			<property name="useActualColumnNames" value="true" />
+			<generatedKey column="id" sqlStatement="JDBC" />
+		</table>
+
+		<table schema="bigtrade-match" tableName="m_h_order_entrust"
+			domainObjectName="HistoryOrderEntrust" enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false">
+			<property name="useActualColumnNames" value="true" />
+			<generatedKey column="id" sqlStatement="JDBC" />
+		</table>
+
+		<!-- <table schema="bigtrade-match" tableName="m_match_record" -->
+		<!-- domainObjectName="MatchRecord" enableCountByExample="false" -->
+		<!-- enableUpdateByExample="false" enableDeleteByExample="false" -->
+		<!-- enableSelectByExample="false" selectByExampleQueryId="false"> -->
+		<!-- <property name="useActualColumnNames" value="true" /> -->
+		<!-- <generatedKey column="id" sqlStatement="JDBC" /> -->
+		<!-- </table> -->
+
+		<!-- <table schema="bigtrade-match" tableName="m_trade_record" -->
+		<!-- domainObjectName="TradeRecord" enableCountByExample="false" -->
+		<!-- enableUpdateByExample="false" enableDeleteByExample="false" -->
+		<!-- enableSelectByExample="false" selectByExampleQueryId="false"> -->
+		<!-- <property name="useActualColumnNames" value="true" /> -->
+		<!-- <generatedKey column="id" sqlStatement="JDBC" /> -->
+		<!-- </table> -->
+
+		<table schema="bigtrade-match" tableName="m_h_trade_record"
+			domainObjectName="HistoryTradeRecord" enableCountByExample="false"
+			enableUpdateByExample="false" enableDeleteByExample="false"
+			enableSelectByExample="false" selectByExampleQueryId="false">
+			<property name="useActualColumnNames" value="true" />
+			<generatedKey column="id" sqlStatement="JDBC" />
+		</table>
+
+	</context>
+
+</generatorConfiguration>
